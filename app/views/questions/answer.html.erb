@@ -1,0 +1,26 @@
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+
+
+<h1>Question - Answer</h1>
+
+<% coach_message = ""%>
+<% if params[:question] == "I am going to work"%>
+<% coach_message = "Great!"%>
+<% elsif params[:question][-1] == "?"%>
+<% coach_message = "Silly question, get dressed and go to work!"%>
+<% else%>
+<% coach_message = "I don't care, get dressed and go to work!"%>
+<% end%>
+
+<blockquote>
+  <%= params[:question]%>
+  <br>
+  <p>-You</p>
+</blockquote>
+
+<blockquote>
+  <%= coach_message%>
+</blockquote>
+
+<%= link_to "Ask a new question", ask_path %>
+
